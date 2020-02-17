@@ -5,7 +5,7 @@
  */
 
 var app = require('../app');
-var debug = require('debug')('sampapp:server');
+var debug = require('debug')('tums:server');
 var http = require('http');
 
 /**
