@@ -1,8 +1,15 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+h1{
+    font-family: Arial, sans-serif;
+    color: red;
+    }
+	
+img {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+}	
+
+img:hover {
+    border: 1px solid #777;
 }
 
-a {
-  color: #00B7FF;
-}
