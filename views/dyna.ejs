@@ -4,7 +4,13 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= passeddata %></h1>
-    <p>About Sample Application</p>
+    <p>About Books</p>
+	<% for(let i = 0; i < books.length; i++) { %>
+        <product>
+            <h2><%= books[i].title %></h1>
+            <p><%= books[i].author %></p>
+			<p><%= books[i].publishedAt %></p>
+        </product>
+    <% } %>
   </body>
 </html>
