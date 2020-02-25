@@ -1,16 +1,16 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <p>About Books</p>
+
+<h1>About Books</h1>
+
+
+
 	<% for(let i = 0; i < books.length; i++) { %>
+	
         <product>
-            <h2><%= books[i].title %></h1>
+            <h2><%= books[i].title %></h2>
             <p><%= books[i].author %></p>
 			<p><%= books[i].publishedAt %></p>
-        </product>
-    <% } %>
-  </body>
-</html>
+    
+		</product>
+    
+	<% } %>
+	
