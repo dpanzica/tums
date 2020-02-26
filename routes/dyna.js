@@ -10,7 +10,17 @@ let booklist = [
             publishedAt: '4.99',
         },
         {
-            title: 'Tums Ultra-Strength 1000mg',
+            title: 'Tums: Ultra-Strength 1000mg',
+            author: 'Tums Ultra strength is for those in need of something more powerful.',
+            publishedAt: '5.99',
+        },
+        {
+            title: 'Tums: Ultra-Strength 1000mg',
+            author: 'Tums Ultra strength is for those in need of something more powerful.',
+            publishedAt: '5.99',
+        },
+        {
+            title: 'Tums: Ultra-Strength 1000mg',
             author: 'Tums Ultra strength is for those in need of something more powerful.',
             publishedAt: '5.99',
         },
