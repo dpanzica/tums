@@ -6,7 +6,7 @@ var logger = require('morgan');
 var layouts = require('express-ejs-layouts');
 const mariadb = require('mariadb/callback');
 
-const db = mariadb.createConnection({host: 'eagle.cdm.depaul.edu', user: 'dpanzica', password: 'dpanzica', database: 'tumsdb'});
+const db = mariadb.createConnection({host: 'eagle.cdm.depaul.edu', user: 'dpanzica', password: 'Tobymilk1017!', database: 'tumsdb'});
 
 // connect to database
 db.connect((err) => {
