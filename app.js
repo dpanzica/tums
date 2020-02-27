@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var layouts = require('express-ejs-layouts');
+/*
 const mariadb = require('mariadb/callback');
 
 const db = mariadb.createConnection({host: 'eagle.cdm.depaul.edu', user: 'dpanzica', password: 'dpanzica', database: 'tumsdb'});
@@ -19,6 +20,7 @@ db.connect((err) => {
 });
 
 global.db = db;
+*/
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
