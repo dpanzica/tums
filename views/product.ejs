@@ -1,0 +1,24 @@
+<form action="/product" method="post" >
+	<p>Product Name: <input type="text" name="productname" required> </p>
+  	<p>Product Image: <input type="text" name="productimage" required> </p>
+	<p>Description: <textarea name="description" rows="10" cols="30">Product Description</textarea> </p>
+	<p>Category ID: <input type="number" name="category_id" required> </p>
+	<p>Supplier ID: <input type="number" name="supplier_id" required> </p>
+	<p>Sub Category - 1: <input type="text" name="subcategory_1" required> </p>
+	<p>Sub Category - 2: <input type="text" name="subcategory_2" required> </p>
+	<p>Product Status: <select  name="status"  required>
+                        <option selected disabled>Choose Status</option>
+                        <option>Available</option>
+                        <option>Discontinued</option>
+                        <option>Future Plan</option>
+                        <option>On Order</option>
+						<option>Out of Stock</option>
+                    </select> </p>
+	<p>Sale Price: <input type="text" name="saleprice" required>	 </p>
+	<p>Purchase Price: <input type="text" name="purchaseprice" required> </p>
+	<p>Qty on Hand: <input type="number" name="qtyonhand" required> </p>
+	<p>Reorder Point: <input type="number" name="reorderpoint" required> </p>
+	<p>Reorder Qty: <input type="number" name="reorderqty" required> </p>
+
+	<button type="submit">Add Product</button>
+</form>
