@@ -1,0 +1,27 @@
+<h1>Edit Product Information</h1>
+
+<form action="/product/save" method="post" >
+	<p><input type="hidden" name="product_id" value=<%= product.product_id %> required> </p>
+	<p>Product Name: <input type="text" name="productname" value="<%= product.productname %>" required> </p>
+  	<p>Product Image: <input type="text" name="productimage" value=<%= product.productimage %> required> </p>
+	<p>Description: <textarea name="description" rows="10" cols="30"><%= product.description %></textarea> </p>
+	<p>Category ID: <input type="number" name="category_id" value=<%= product.category_id %> required> </p>
+	<p>Supplier ID: <input type="number" name="supplier_id" value=<%= product.supplier_id %> required> </p>
+	<p>Sub Category - 1: <input type="text" name="subcategory_1" value=<%= product.subcategory_1 %> required> </p>
+	<p>Sub Category - 2: <input type="text" name="subcategory_2" value=<%= product.subcategory_2 %> required> </p>
+	<p>Product Status: <select  name="status"  required>
+                        <option selected><%= product.status %></option>
+                        <option>Available</option>
+                        <option>Discontinued</option>
+                        <option>Future Plan</option>
+                        <option>On Order</option>
+						<option>Out of Stock</option>
+                    </select> </p>
+	<p>Sale Price: <input type="text" name="saleprice" value=<%= product.saleprice %> required>	 </p>
+	<p>Purchase Price: <input type="text" name="purchaseprice" value=<%= product.purchaseprice %> required> </p>
+	<p>Qty on Hand: <input type="number" name="qtyonhand" value=<%= product.qtyonhand %> required> </p>
+	<p>Reorder Point: <input type="number" name="reorderpoint" value=<%= product.reorderpoint %> required> </p>
+	<p>Reorder Qty: <input type="number" name="reorderqty" value=<%= product.reorderqty %> required> </p>
+
+	<button type="submit">Update Product</button>
+</form>
