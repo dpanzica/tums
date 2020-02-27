@@ -14,16 +14,7 @@ let booklist = [
             author: 'Tums Ultra strength is for those in need of something more powerful.',
             publishedAt: '5.99',
         },
-        {
-            title: 'Tums: Ultra-Strength 1000mg',
-            author: 'Tums Ultra strength is for those in need of something more powerful.',
-            publishedAt: '5.99',
-        },
-        {
-            title: 'Tums: Ultra-Strength 1000mg',
-            author: 'Tums Ultra strength is for those in need of something more powerful.',
-            publishedAt: '5.99',
-        },
+        
         {
             title: 'Emergen Cee',
             author: 'comes in a four pack and helps you get your dose of vitamin c.',
