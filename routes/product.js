@@ -81,8 +81,6 @@ let insertquery = "INSERT INTO product (productname, productimage, description, 
 
 });
 
-
-
 // ==================================================
 // Route to save edited product. 
 // ==================================================
