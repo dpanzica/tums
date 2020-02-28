@@ -1,0 +1,31 @@
+<% if (products.length > 0) {%>
+			<table border=1>
+				<tr>
+					<th>Product Name</th>
+					<th>Description</th>
+					<th>Image</th>
+					<th>Status</th>
+					<th>Sale Price</th>
+					<th colspan=3>Actions</th>
+				</tr>
+				
+      	<% products.forEach((product, index) => { %>
+				<tr>
+					<td><%= product.productname %></td>
+					<td><%= product.description %></td>
+					<td><%= product.productimage %></td>
+					<td><%= product.status %></td>
+					<td><%= product.saleprice %></td>
+					<td><a href='/product/<%= product.product_id %>'>Show</a></td>
+					<td><a href='/product/<%= product.product_id %>/edit'>Edit</a></td>
+					<td><a href='/product/<%= product.product_id %>/delete' onclick="return confirm('Are you sure you want to delete this item?');">Delete</a></td>
+                </tr>
+
+        <% }); %>
+		</table>
+        <% } else { %>
+            <p>Products Not Available</p>
+        <% } %>
+
+<p> <a href="/product/addprod">Add New Product</a> </p>
+
