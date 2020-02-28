@@ -1,0 +1,26 @@
+<% if (result.length > 0) {%>
+			<table border=1>
+				<tr>
+					<th>Category Name</th>
+					<th>Description</th>
+					<th colspan=3>Actions</th>
+				</tr>
+				
+      	<% result.forEach((item, index) => { %>
+				<tr>
+					<td><%= item.categoryname %></td>
+					<td><%= item.description %></td>
+					<td><a href='/category/<%= item.category_id %>'>Show</a></td>
+					<td><a href='/category/<%= item.category_id %>/edit'>Edit</a></td>
+					<td><a href='/category/<%= item.category_id %>/delete' onclick="return confirm('Are you sure you want to delete this item?');">Delete</a></td>
+                </tr>
+
+        <% }); %>
+		</table>
+        <% } else { %>
+            <p>Categories Not Available</p>
+        <% } %>
+
+<p> <a href="/category/add">Add New</a> </p>
+
+

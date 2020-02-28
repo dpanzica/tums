@@ -1,0 +1,9 @@
+<h1>Edit Category Information</h1>
+
+<form action="/category/save" method="post" >
+	<p><input type="hidden" name="category_id" value=<%= result.category_id %> required> </p>
+	<p>Category Name: <input type="text" name="categoryname" value="<%= result.categoryname %>" required> </p>
+	<p>Description: <textarea name="description" rows="10" cols="30"><%= result.description %></textarea> </p>
+
+	<button type="submit">Update</button>
+</form>
