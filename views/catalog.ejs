@@ -1,0 +1,18 @@
+<% if (products.length > 0) {%>
+      	<% products.forEach((product, index) => { %>
+		<product>
+		<table><tr>
+			<td><%= product.productname %></td>
+			<td><%= product.product_id %></td>
+			</tr><tr>
+			<td><%= product.productimage %></td>
+			<td><%= product.status %></td>
+			</tr><tr>
+			<td><%= product.saleprice %></td>
+			<td><a href='/catalog/<%= product.product_id %>/add'> Add To Cart</a></td>
+                    	</tr></table>
+            </product>
+        <% }); %>
+<% } else { %>
+        <p>No Products</p>
+<% } %>
