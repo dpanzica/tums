@@ -70,6 +70,16 @@ router.post('/', function(req, res, next) {
 
 let insertquery = "INSERT INTO product (productname, productimage, description, category_id, supplier_id, subcategory_1, subcategory_2, status, saleprice, purchaseprice, qtyonhand, reorderpoint, reorderqty) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"; 
 
+    console.log("=====================================");
+    
+    console.log(insertquery);
+    
+    console.log("=====================================");
+    
+    console.log(req.body);
+    
+    console.log("=====================================");
+    
 	db.query(insertquery,[req.body.productname,req.body.productimage,req.body.description,req.body.category_id,req.body.supplier_id, req.body.subcategory_1, req.body.subcategory_2, req.body.status, req.body.saleprice, req.body.purchaseprice, req.body.qtyonhand,req.body.reorderpoint, req.body.reorderqty],(err, result) => {
 	if (err) {
 			console.log(err);
