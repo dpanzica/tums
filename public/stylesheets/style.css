@@ -90,11 +90,11 @@ product {
 
 
 }
-td{ background-color: lightgray
+td: { background-color: lightgray
     
 }
 
-td (even){background-color: #f2f2f2}
+td:(even){background-color: #f2f2f2}
 
 
 th {
