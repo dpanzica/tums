@@ -96,7 +96,4 @@ th {
   background-color: red;
   color: white;
 }
-#prod tr:nth-child(even){background-color: #f2f2f2;}
-
-#prod tr:hover {background-color: #ddd;}
 
