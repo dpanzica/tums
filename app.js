@@ -20,6 +20,10 @@ db.connect((err) => {
 
 global.db = db;
 
+const cart = [];
+global.cart = cart;
+
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var aboutRouter = require('./routes/about');
@@ -29,6 +33,8 @@ var productRouter = require('./routes/product');
 var categoryRouter = require('./routes/category');
 var privacyRouter = require('./routes/privacy');
 var helpRouter = require('./routes/help');
+var catalogRouter = require('./routes/catalog');
+var customerRouter = require('./routes/customer');
 
 var app = express();
 
@@ -53,6 +59,8 @@ app.use('/privacy', privacyRouter);
 app.use('/help', helpRouter);
 app.use('/product', productRouter);
 app.use('/category', categoryRouter);
+app.use('/catalog', catalogRouter);
+app.use('/customer', customerRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
