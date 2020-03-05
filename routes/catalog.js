@@ -22,23 +22,7 @@ module.exports = router;
 // Route to add an item to the cart
 // ==================================================
 router.get('/:prodid/add', function(req, res, next) {
-   cart.push(req.params.prodid);
-   res.redirect('/catalog');
-});
-
-
-// ==================================================
-// Route to show shopping cart
-// ==================================================
-router.get('/cart', function(req, res, next) {
-   res.render('cart');
-});
-
-// ==================================================
-// Route to add an item to the cart
-// ==================================================
-router.get('/:prodid/add', function(req, res, next) {
-	if (typeof req.session.cart !== 'undefined' && req.session.cart ) {
+    if (typeof req.session.cart !== 'undefined' && req.session.cart ) {
 		req.session.cart.push(req.params.prodid);
 	}
 	else {
@@ -47,21 +31,15 @@ router.get('/:prodid/add', function(req, res, next) {
 		cart.push(req.params.prodid);
 		req.session.cart = cart;
 	}
-   res.redirect('/catalog/cart');
-   
+   cart.push(req.params.prodid);
+   res.redirect('/catalog');
 });
 
-// ==================================================
-// Route to remove an item from the cart
-// ==================================================
-router.get('/:itemid/remove', function(req, res, next) {
-   req.session.cart.splice(req.params.itemid,1);
-   res.redirect('/catalog/cart');
-});
 
 // ==================================================
 // Route to show shopping cart
 // ==================================================
+
 router.get('/cart', function(req, res, next) {
 	if (req.session.cart) {
 		let query = "SELECT product_id, productname, productimage, status, saleprice from product WHERE product_id in (" + req.session.cart + ")"; 
@@ -75,4 +53,45 @@ router.get('/cart', function(req, res, next) {
 	} else {
 		res.render('cart', {cartitems: 0 });
 	}
+});
+
+// ==================================================
+// Route to remove an item from the cart
+// ==================================================
+router.get('/:itemid/remove', function(req, res, next) {
+   req.session.cart.splice(req.params.itemid,1);
+   res.redirect('/catalog/cart');
+});
+
+// Route to add an item to the cart
+// ==================================================
+router.post('/add', function(req, res, next) {
+	if (typeof req.session.cart !== 'undefined' && req.session.cart ) {
+		
+		if (req.session.cart.includes(req.body.product_id))
+			{
+				// Existing Item Being Added to Basket
+				// Increase Quantity of Existing Array Element
+				var n = req.session.cart.indexOf(req.body.product_id);
+				req.session.qty[n] = parseInt(req.session.qty[n]) + parseInt(req.body.qty);
+			}
+		else
+			{
+				// Item Being Added First Time
+				req.session.cart.push(req.body.product_id);
+				req.session.qty.push(req.body.qty);
+			}
+	}
+	else {
+		var cart = [];
+		cart.push(req.body.product_id);
+		req.session.cart = cart;
+		
+		var qty = [];
+		qty.push(req.body.qty);
+		req.session.qty = qty;
+		
+	}
+  return  res.redirect('/catalog/cart');
+   
 });
