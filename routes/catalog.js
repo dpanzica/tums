@@ -39,28 +39,30 @@ router.get('/:prodid/add', function(req, res, next) {
 // ==================================================
 // Route to show shopping cart
 // ==================================================
-
 router.get('/cart', function(req, res, next) {
 	if (req.session.cart) {
-		let query = "SELECT product_id, productname, productimage, status, saleprice from product WHERE product_id in (" + req.session.cart + ")"; 
+		let query = "SELECT product_id, productname, productimage, status, saleprice from product WHERE product_id in (" + req.session.cart + ")";
+
 		// execute query
 		db.query(query, (err, result) => {
 			if (err) {
 				res.redirect('/');
 			}
-			res.render('cart', {cartitems: result });
+			res.render('cart', {cartitems: result, qtys: req.session.qty });
 		});
 	} else {
 		res.render('cart', {cartitems: 0 });
 	}
 });
 
+
 // ==================================================
 // Route to remove an item from the cart
 // ==================================================
-router.get('/:itemid/remove', function(req, res, next) {
-   req.session.cart.splice(req.params.itemid,1);
-   res.redirect('/catalog/cart');
+router.post('/remove', function(req, res, next) {
+   req.session.cart.splice(req.body.itemid,1);
+   req.session.qty.splice(req.body.itemid,1);
+   return res.redirect('/catalog/cart');
 });
 
 // Route to add an item to the cart

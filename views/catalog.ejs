@@ -1,6 +1,6 @@
 <p> Here are some products available for you to see: </p>
 
-<% if (products.length > 0) {%>
+<% if (cartitems != '0') ) {%>
       	<% products.forEach((product, index) => { %>
 			<product><form action="/catalog/add" method="post" >
 					<input type="hidden" name="product_id" value=<%= product.product_id %> > 
