@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var layouts = require('express-ejs-layouts');
 const mariadb = require('mariadb/callback');
+const session = require('express-session');
 
 const db = mariadb.createConnection({host: 'eagle.cdm.depaul.edu', user: 'dpanzica', password: 'dpanzica', database: 'tumsdb'});
 
@@ -61,6 +62,7 @@ app.use('/product', productRouter);
 app.use('/category', categoryRouter);
 app.use('/catalog', catalogRouter);
 app.use('/customer', customerRouter);
+app.use(session({secret: 'TumsSecret'}));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
