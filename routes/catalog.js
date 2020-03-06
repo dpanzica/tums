@@ -35,6 +35,9 @@ router.get('/:prodid/add', function(req, res, next) {
    res.redirect('/catalog');
 });
 
+console.log("===============================================");
+console.log("Items in Shopping Cart:" + req.session.cart);		console.log("===============================================");
+
 
 // ==================================================
 // Route to show shopping cart
