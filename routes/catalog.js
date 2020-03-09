@@ -18,7 +18,7 @@ router.get('/', function(req, res, next) {
 });
 module.exports = router;
 
-// ==================================================
+//*/ ==================================================
 // Route to add an item to the cart
 // ==================================================
 router.get('/:prodid/add', function(req, res, next) {
@@ -34,10 +34,6 @@ router.get('/:prodid/add', function(req, res, next) {
    cart.push(req.params.prodid);
    res.redirect('/catalog');
 });
-
-console.log("===============================================");
-console.log("Items in Shopping Cart:" + req.session.cart);		console.log("===============================================");
-
 
 // ==================================================
 // Route to show shopping cart
