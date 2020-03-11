@@ -36,7 +36,7 @@ var customerRouter = require('./routes/customer');
 
 var app = express();
 
-app.use(session({secret: 'mysecret'}));
+app.use(session({secret: 'tumsseccret'}));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
